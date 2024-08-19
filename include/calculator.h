@@ -1,12 +1,12 @@
 #ifndef CALCULATOR_H
 #define CALCULATOR_H
 
-int sum(int addend1, int addend2);
+double sum(double addend1, double addend2);
 
-int subtract(int minuend, int subtrahend);
+double subtract(double minuend, double subtrahend);
 
-int multiply(int multiplier, int multiplicand);
+double multiply(double multiplier, double multiplicand);
 
-int divide(int dividend, int divisor);
+double divide(double dividend, double divisor);
 
 #endif
