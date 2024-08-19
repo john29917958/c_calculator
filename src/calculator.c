@@ -1,25 +1,25 @@
 #include "calculator.h"
 
-int sum(int addend1, int addend2)
+double sum(double addend1, double addend2)
 {
-    int sum = addend1 + addend2;
+    double sum = addend1 + addend2;
     return sum;
 }
 
-int subtract(int minuend, int subtrahend)
+double subtract(double minuend, double subtrahend)
 {
-    int difference = minuend - subtrahend;
+    double difference = minuend - subtrahend;
     return difference;
 }
 
-int multiply(int multiplier, int multiplicand)
+double multiply(double multiplier, double multiplicand)
 {
-    int product = multiplier * multiplicand;
+    double product = multiplier * multiplicand;
     return product;
 }
 
-int divide(int dividend, int divisor)
+double divide(double dividend, double divisor)
 {
-    int quotient = dividend / divisor;
+    double quotient = dividend / divisor;
     return quotient;
 }
