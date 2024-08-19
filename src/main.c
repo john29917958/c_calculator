@@ -3,15 +3,70 @@
 #include "string.h"
 #include "stdbool.h"
 #include "calculator.h"
+#include "utilities.h"
 
 void run_sum_calculation()
 {
+    char input[256];
+    const size_t input_size = sizeof(input);
+    printf("Please enter the first number as an addend: ");
+    read_line(input, input_size);
+    double addend1;
+    sscanf(input, "%lf", &addend1);
+    printf("Please enter the second number as an addend: ");
+    read_line(input, input_size);
+    double addend2;
+    sscanf(input, "%lf", &addend2);
+    double result = sum(addend1, addend2);
+    printf("The sum of %lf and %lf is %lf\n", addend1, addend2, result);
 }
 
-void read_line(char *input, const size_t input_size)
+void run_subtraction_calculation()
 {
-    fgets(input, input_size, stdin);
-    input[strcspn(input, "\r\n")] = 0;
+    char input[256];
+    const size_t input_size = sizeof(input);
+    printf("Please enter the first number as an minuend: ");
+    read_line(input, input_size);
+    double minuend;
+    sscanf(input, "%lf", &minuend);
+    printf("Please enter the second number as an subtrahend: ");
+    read_line(input, input_size);
+    double subtrahend;
+    sscanf(input, "%lf", &subtrahend);
+    double result = subtract(minuend, subtrahend);
+    printf("The result of %lf - %lf is %lf\n", minuend, subtrahend, result);
+}
+
+void run_multiplication_calculation()
+{
+    char input[256];
+    const size_t input_size = sizeof(input);
+    printf("Please enter the first number as an multiplier: ");
+    read_line(input, input_size);
+    double multiplier;
+    sscanf(input, "%lf", &multiplier);
+    printf("Please enter the second number as an multiplicand: ");
+    read_line(input, input_size);
+    double multiplicand;
+    sscanf(input, "%lf", &multiplicand);
+    double result = multiply(multiplier, multiplicand);
+    printf("The result of %lf x %lf is %lf\n", multiplier, multiplicand, result);
+}
+
+void run_division_calculation()
+{
+    char input[256];
+    const size_t input_size = sizeof(input);
+    printf("Please enter the first number as an dividend: ");
+    read_line(input, input_size);
+    double dividend;
+    sscanf(input, "%lf", &dividend);
+    printf("Please enter the second number as an divisor: ");
+    read_line(input, input_size);
+    double divisor;
+    sscanf(input, "%lf", &divisor);
+    double result = divide(dividend, divisor);
+    printf("The result of %lf / %lf is %lf\n", dividend, divisor, result);
 }
 
 void print_help_message()
@@ -37,6 +92,18 @@ int main(int argc, char **argv)
         if (strcmp(input, "1") == 0)
         {
             run_sum_calculation();
+        }
+        else if (strcmp(input, "2") == 0)
+        {
+            run_subtraction_calculation();
+        }
+        else if (strcmp(input, "3") == 0)
+        {
+            run_multiplication_calculation();
+        }
+        else if (strcmp(input, "4") == 0)
+        {
+            run_division_calculation();
         }
         else if (strcmp(input, "h") == 0)
         {
