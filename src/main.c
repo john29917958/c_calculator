@@ -15,6 +15,10 @@ void run_division_calculation();
 
 void print_help_message();
 
+void print_exit_program_message();
+
+void print_invalid_command_message(char *input);
+
 int main(int argc, char **argv)
 {
     printf("Welcome to simple C Console Calculator!\n");
@@ -49,11 +53,11 @@ int main(int argc, char **argv)
         else if (strcmp(input, "q") == 0)
         {
             is_quit = true;
-            printf("Thanks for using Simple Console C Calculator.\n");
+            print_exit_program_message();
         }
         else
         {
-            printf("We don't have this option \"%s\"!\n", input);
+            print_invalid_command_message(input);
         }
     } while (!is_quit);
 
@@ -131,4 +135,14 @@ void print_help_message()
            "2: Subtract a value from a number\n"
            "3: Multiply two numbers\n"
            "4: Divide two numbers\n");
+}
+
+void print_exit_program_message()
+{
+    printf("Thanks for using Simple Console C Calculator.\n");
+}
+
+void print_invalid_command_message(char *input)
+{
+    printf("We don't support this command: \"%s\"!\n", input);
 }
