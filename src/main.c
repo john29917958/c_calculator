@@ -15,6 +15,10 @@ void run_division_calculation();
 
 void print_help_message();
 
+void print_exit_program_message();
+
+void print_invalid_command_message(char *input);
+
 int main(int argc, char **argv)
 {
     printf("Welcome to simple C Console Calculator!\n");
@@ -49,11 +53,11 @@ int main(int argc, char **argv)
         else if (strcmp(input, "q") == 0)
         {
             is_quit = true;
-            printf("Thanks for using Simple Console C Calculator.\n");
+            print_exit_program_message();
         }
         else
         {
-            printf("We don't have this option \"%s\"!\n", input);
+            print_invalid_command_message(input);
         }
     } while (!is_quit);
 
@@ -73,7 +77,7 @@ void run_sum_calculation()
     double addend2;
     sscanf(input, "%lf", &addend2);
     double result = sum(addend1, addend2);
-    printf("The result of %g + %g is %g\n", addend1, addend2, result);
+    printf("The result is %g\n", result);
 }
 
 void run_subtraction_calculation()
@@ -89,7 +93,7 @@ void run_subtraction_calculation()
     double subtrahend;
     sscanf(input, "%lf", &subtrahend);
     double result = subtract(minuend, subtrahend);
-    printf("The result of %g - %g is %g\n", minuend, subtrahend, result);
+    printf("The result is %g\n", result);
 }
 
 void run_multiplication_calculation()
@@ -105,7 +109,7 @@ void run_multiplication_calculation()
     double multiplicand;
     sscanf(input, "%lf", &multiplicand);
     double result = multiply(multiplier, multiplicand);
-    printf("The result of %g x %g is %g\n", multiplier, multiplicand, result);
+    printf("The result is %g\n", result);
 }
 
 void run_division_calculation()
@@ -121,7 +125,7 @@ void run_division_calculation()
     double divisor;
     sscanf(input, "%lf", &divisor);
     double result = divide(dividend, divisor);
-    printf("The result of %g / %g is %g\n", dividend, divisor, result);
+    printf("The result is %g\n", result);
 }
 
 void print_help_message()
@@ -131,4 +135,14 @@ void print_help_message()
            "2: Subtract a value from a number\n"
            "3: Multiply two numbers\n"
            "4: Divide two numbers\n");
+}
+
+void print_exit_program_message()
+{
+    printf("Thanks for using Simple Console C Calculator.\n");
+}
+
+void print_invalid_command_message(char *input)
+{
+    printf("We don't support this command: \"%s\"!\n", input);
 }

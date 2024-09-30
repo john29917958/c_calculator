@@ -2,8 +2,8 @@
 #include "utilities.h"
 #include "string.h"
 
-void read_line(char *input, const size_t input_size)
+void read_line(char *buffer, const size_t buffer_size)
 {
-    fgets(input, input_size, stdin);
-    input[strcspn(input, "\r\n")] = 0;
+    fgets(buffer, buffer_size, stdin);
+    buffer[strcspn(buffer, "\r\n")] = 0;
 }
