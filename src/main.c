@@ -73,7 +73,7 @@ void run_sum_calculation()
     double addend2;
     sscanf(input, "%lf", &addend2);
     double result = sum(addend1, addend2);
-    printf("The result of %g + %g is %g\n", addend1, addend2, result);
+    printf("The result is %g\n", result);
 }
 
 void run_subtraction_calculation()
@@ -89,7 +89,7 @@ void run_subtraction_calculation()
     double subtrahend;
     sscanf(input, "%lf", &subtrahend);
     double result = subtract(minuend, subtrahend);
-    printf("The result of %g - %g is %g\n", minuend, subtrahend, result);
+    printf("The result is %g\n", result);
 }
 
 void run_multiplication_calculation()
@@ -105,7 +105,7 @@ void run_multiplication_calculation()
     double multiplicand;
     sscanf(input, "%lf", &multiplicand);
     double result = multiply(multiplier, multiplicand);
-    printf("The result of %g x %g is %g\n", multiplier, multiplicand, result);
+    printf("The result is %g\n", result);
 }
 
 void run_division_calculation()
@@ -121,7 +121,7 @@ void run_division_calculation()
     double divisor;
     sscanf(input, "%lf", &divisor);
     double result = divide(dividend, divisor);
-    printf("The result of %g / %g is %g\n", dividend, divisor, result);
+    printf("The result is %g\n", result);
 }
 
 void print_help_message()
